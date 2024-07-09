@@ -1,4 +1,5 @@
 import useData from "./useData";
+import { Genre } from "./useGenres";
 
 export interface Movie {
   id: number;
@@ -10,6 +11,15 @@ export interface Movie {
   vote_average: number;
 }
 
-const useGames = () => useData<Movie>("discover/movie");
+const useMovies = (selectedGenre: Genre | null) =>
+  useData<Movie>(
+    "discover/movie",
+    {
+      params: {
+        with_genres: selectedGenre?.id,
+      },
+    },
+    [selectedGenre?.id]
+  );
 
-export default useGames;
+export default useMovies;
