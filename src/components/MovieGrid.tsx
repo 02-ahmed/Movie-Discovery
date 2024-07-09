@@ -19,7 +19,7 @@ const MovieGrid = () => {
           lg: 3,
           xl: 3,
         }}
-        spacing={10}
+        spacing={3}
       >
         {isLoading &&
           skeletons.map((skeleton) => (

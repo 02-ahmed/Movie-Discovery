@@ -1,13 +1,18 @@
+import { Button, List, ListItem } from "@chakra-ui/react";
 import useGenres from "../hooks/useGenres";
 
 const GenreList = () => {
   const { genres } = useGenres();
   return (
-    <ul>
+    <List marginTop={2}>
       {genres.map((genre) => (
-        <li key={genre.id}>{genre.name}</li>
+        <ListItem key={genre.id}>
+          <Button marginY="5px" paddingX="10px" width="120px">
+            {genre.name}
+          </Button>
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 };
 
