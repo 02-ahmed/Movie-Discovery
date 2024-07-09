@@ -1,31 +1,9 @@
-import React, { useEffect, useState } from "react";
-import apiClient from "../services/api-client";
 import { Text } from "@chakra-ui/react";
-
-interface Movie {
-  id: number;
-  genre_ids: number[];
-  title: string;
-  overview: string;
-  poster_path: string;
-  release_data: string;
-}
-
-interface FetchMoviesResponse {
-  results: Movie[];
-  count: number;
-}
+import useMovies from "../hooks/useMovies";
 
 const MovieGrid = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [error, setError] = useState("");
+  const { movies, error } = useMovies();
 
-  useEffect(() => {
-    apiClient
-      .get<FetchMoviesResponse>("/discover/movie")
-      .then((res) => setMovies(res.data.results))
-      .catch((err) => setError(err.message));
-  });
   return (
     <>
       {error && <Text>{error}</Text>}
