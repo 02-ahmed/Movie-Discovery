@@ -20,7 +20,7 @@ const MovieCard = ({ movie }: Props) => {
   const baseUrl = "https://image.tmdb.org/t/p/w500";
   const imageUrl = baseUrl + "/" + movie.poster_path;
   return (
-    <Card borderRadius={10} overflow="hidden" width="300px">
+    <Card>
       <Image src={imageUrl} maxHeight="450px" />
       <CardBody>
         <HStack justifyContent="space-between">
