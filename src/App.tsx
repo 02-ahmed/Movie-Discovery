@@ -38,7 +38,10 @@ function App() {
       </Show>
       <GridItem pl="2" area={"main"}>
         <Show below="lg">
-          <GenreSelector />
+          <GenreSelector
+            onSelectGenre={(genre) => setSelectedGenre(genre)}
+            selectedGenre={selectedGenre}
+          />
         </Show>
         <MovieGrid selectedGenre={selectedGenre} />
       </GridItem>

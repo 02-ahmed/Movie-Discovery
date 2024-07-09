@@ -1,18 +1,25 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
-import useGenres from "../hooks/useGenres";
+import useGenres, { Genre } from "../hooks/useGenres";
 
-const GenreSelector = () => {
+interface Props {
+  onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
+}
+
+const GenreSelector = ({ onSelectGenre, selectedGenre }: Props) => {
   const { genres, error } = useGenres();
   if (error) return null;
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        Genres
+        {selectedGenre?.name || "Genre"}
       </MenuButton>
       <MenuList>
         {genres.map((genre) => (
-          <MenuItem key={genre.id}>{genre.name}</MenuItem>
+          <MenuItem onClick={() => onSelectGenre(genre)} key={genre.id}>
+            {genre.name}
+          </MenuItem>
         ))}
       </MenuList>
     </Menu>
