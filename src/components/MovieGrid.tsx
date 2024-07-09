@@ -3,7 +3,6 @@ import useMovies from "../hooks/useMovies";
 import MovieCard from "./MovieCard";
 import MovieCardSkeleton from "./MovieCardSkeleton";
 import MovieCardContainer from "./MovieCardContainer";
-import { Genre } from "../hooks/useGenres";
 import { MovieQuery } from "../App";
 
 interface Props {

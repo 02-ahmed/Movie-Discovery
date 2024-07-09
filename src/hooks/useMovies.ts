@@ -1,6 +1,5 @@
 import { MovieQuery } from "../App";
 import useData from "./useData";
-import { Genre } from "./useGenres";
 
 export interface Movie {
   id: number;
@@ -18,6 +17,7 @@ const useMovies = (movieQuery: MovieQuery) =>
     {
       params: {
         with_genres: movieQuery.genre?.id,
+        sort_by: movieQuery.sortOrder,
       },
     },
     [movieQuery]
