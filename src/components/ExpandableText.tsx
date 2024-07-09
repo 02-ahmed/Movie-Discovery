@@ -13,10 +13,11 @@ const ExpandableText = ({ children, maxChar }: Props) => {
     <>
       {isSummarised ? `${summarisedText}......` : `${children}`}
       <Link
-        color="blue"
+        color="gray.400"
         onClick={() => {
           setIsSummarised(!isSummarised);
         }}
+        textDecoration="underline"
       >
         {isSummarised ? <Text>Read more</Text> : <Text>Less</Text>}
       </Link>

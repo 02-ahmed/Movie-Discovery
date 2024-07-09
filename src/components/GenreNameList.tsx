@@ -1,5 +1,4 @@
 import { HStack, List, ListItem, Text } from "@chakra-ui/react";
-import React from "react";
 
 interface Props {
   genres: number[];
