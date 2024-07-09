@@ -6,8 +6,12 @@ import { Genre } from "./hooks/useGenres.ts";
 import { useState } from "react";
 import GenreSelector from "./components/GenreSelector.tsx";
 
+export interface MovieQuery {
+  genre: Genre | null;
+}
+
 function App() {
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [movieQuery, setMovieQuery] = useState<MovieQuery>({} as MovieQuery);
   return (
     <Grid
       templateAreas={{
@@ -31,19 +35,19 @@ function App() {
       <Show above="lg">
         <GridItem pl="2" area={"aside"}>
           <GenreList
-            selectedGenre={selectedGenre}
-            onSelectGenre={(genre) => setSelectedGenre(genre)}
+            selectedGenre={movieQuery.genre}
+            onSelectGenre={(genre) => setMovieQuery({ ...movieQuery, genre })}
           />
         </GridItem>
       </Show>
       <GridItem pl="2" area={"main"}>
         <Show below="lg">
           <GenreSelector
-            onSelectGenre={(genre) => setSelectedGenre(genre)}
-            selectedGenre={selectedGenre}
+            onSelectGenre={(genre) => setMovieQuery({ ...movieQuery, genre })}
+            selectedGenre={movieQuery.genre}
           />
         </Show>
-        <MovieGrid selectedGenre={selectedGenre} />
+        <MovieGrid movieQuery={movieQuery} />
       </GridItem>
       <GridItem pl="2" area={"footer"}>
         Footer
