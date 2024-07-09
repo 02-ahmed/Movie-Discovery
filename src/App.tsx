@@ -4,6 +4,7 @@ import MovieGrid from "./components/MovieGrid";
 import GenreList from "./components/GenreList";
 import { Genre } from "./hooks/useGenres.ts";
 import { useState } from "react";
+import GenreSelector from "./components/GenreSelector.tsx";
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
@@ -36,6 +37,9 @@ function App() {
         </GridItem>
       </Show>
       <GridItem pl="2" area={"main"}>
+        <Show below="lg">
+          <GenreSelector />
+        </Show>
         <MovieGrid selectedGenre={selectedGenre} />
       </GridItem>
       <GridItem pl="2" area={"footer"}>
