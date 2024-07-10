@@ -7,6 +7,7 @@ import { useState } from "react";
 import GenreSelector from "./components/GenreSelector.tsx";
 import SortSelector from "./components/SortSelector.tsx";
 import MovieHeading from "./components/MovieHeading.tsx";
+import Footer from "./components/Footer.tsx";
 
 export interface MovieQuery {
   genre: Genre | null;
@@ -74,7 +75,7 @@ function App() {
         <MovieGrid movieQuery={movieQuery} />
       </GridItem>
       <GridItem pl="2" area={"footer"}>
-        Footer
+        <Footer />
       </GridItem>
     </Grid>
   );
