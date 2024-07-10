@@ -6,6 +6,7 @@ import { Genre } from "./hooks/useGenres.ts";
 import { useState } from "react";
 import GenreSelector from "./components/GenreSelector.tsx";
 import SortSelector from "./components/SortSelector.tsx";
+import MovieHeading from "./components/MovieHeading.tsx";
 
 export interface MovieQuery {
   genre: Genre | null;
@@ -48,22 +49,27 @@ function App() {
         </GridItem>
       </Show>
       <GridItem pl="2" area={"main"}>
-        <Flex paddingLeft={2} marginBottom={5}>
-          <Show below="lg">
-            <GenreSelector
-              onSelectGenre={(genre) => setMovieQuery({ ...movieQuery, genre })}
-              selectedGenre={movieQuery.genre}
-            />
-          </Show>
-          <Box marginLeft={5}>
-            <SortSelector
-              sortOrder={movieQuery.sortOrder}
-              onSelectSortOrder={(sortOrder) =>
-                setMovieQuery({ ...movieQuery, sortOrder })
-              }
-            />
-          </Box>
-        </Flex>
+        <Box paddingLeft={2}>
+          <MovieHeading movieQuery={movieQuery} />
+          <Flex paddingLeft={2} marginBottom={5}>
+            <Show below="lg">
+              <GenreSelector
+                onSelectGenre={(genre) =>
+                  setMovieQuery({ ...movieQuery, genre })
+                }
+                selectedGenre={movieQuery.genre}
+              />
+            </Show>
+            <Box marginLeft={5}>
+              <SortSelector
+                sortOrder={movieQuery.sortOrder}
+                onSelectSortOrder={(sortOrder) =>
+                  setMovieQuery({ ...movieQuery, sortOrder })
+                }
+              />
+            </Box>
+          </Flex>
+        </Box>
 
         <MovieGrid movieQuery={movieQuery} />
       </GridItem>

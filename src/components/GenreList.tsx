@@ -1,4 +1,4 @@
-import { Button, List, ListItem, Skeleton } from "@chakra-ui/react";
+import { Button, Heading, List, ListItem, Skeleton } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
 
 interface Props {
@@ -19,21 +19,24 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
       </Button>
     ));
   return (
-    <List marginTop={2}>
-      {genres.map((genre) => (
-        <ListItem key={genre.id}>
-          <Button
-            colorScheme={genre.id === selectedGenre?.id ? "green" : "blue"}
-            onClick={() => onSelectGenre(genre)}
-            marginY="5px"
-            paddingX="10px"
-            width="120px"
-          >
-            {genre.name}
-          </Button>
-        </ListItem>
-      ))}
-    </List>
+    <>
+      <Heading fontSize="2xl">Genres</Heading>
+      <List marginTop={2}>
+        {genres.map((genre) => (
+          <ListItem key={genre.id}>
+            <Button
+              colorScheme={genre.id === selectedGenre?.id ? "green" : "blue"}
+              onClick={() => onSelectGenre(genre)}
+              marginY="5px"
+              paddingX="10px"
+              width="120px"
+            >
+              {genre.name}
+            </Button>
+          </ListItem>
+        ))}
+      </List>
+    </>
   );
 };
 
