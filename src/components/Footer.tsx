@@ -6,7 +6,7 @@ import { FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
     <HStack justifyContent="center" marginTop={5} fontSize="15px">
-      <Text>Built by Ahmed</Text>
+      <Text>Built by Ahmed.</Text>
       <Link href="https://github.com/02-ahmed">
         <FaGithub />
       </Link>
