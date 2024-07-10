@@ -35,9 +35,9 @@ function App() {
     >
       <GridItem pl="2" area={"nav"}>
         <NavBar
-          onSearch={(searchText) =>
+        /* onSearch={(searchText) =>
             setMovieQuery({ ...movieQuery, searchText })
-          }
+          } */
         />
       </GridItem>
       <Show above="lg">
