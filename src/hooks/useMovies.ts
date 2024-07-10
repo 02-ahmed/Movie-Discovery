@@ -18,6 +18,7 @@ const useMovies = (movieQuery: MovieQuery) =>
       params: {
         with_genres: movieQuery.genre?.id,
         sort_by: movieQuery.sortOrder,
+        search: movieQuery.searchText,
       },
     },
     [movieQuery]
