@@ -51,6 +51,7 @@ function App() {
             />
           </Show>
           <SortSelector
+            sortOrder={movieQuery.sortOrder}
             onSelectSortOrder={(sortOrder) =>
               setMovieQuery({ ...movieQuery, sortOrder })
             }

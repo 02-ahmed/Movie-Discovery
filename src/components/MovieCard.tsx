@@ -12,6 +12,8 @@ import { Movie } from "../hooks/useMovies";
 import ExpandableText from "./ExpandableText";
 import GenreNameList from "./GenreNameList";
 
+import noImg from "../assets/null.jpg";
+
 interface Props {
   movie: Movie;
 }
@@ -19,9 +21,12 @@ interface Props {
 const MovieCard = ({ movie }: Props) => {
   const baseUrl = "https://image.tmdb.org/t/p/w500";
   const imageUrl = baseUrl + "/" + movie.poster_path;
+
+  const img = movie.poster_path === null ? `${noImg}` : `${imageUrl}`;
+
   return (
     <Card>
-      <Image src={imageUrl} maxHeight="450px" />
+      <Image src={img} maxHeight="450px" />
       <CardBody>
         <HStack justifyContent="space-between">
           <Heading fontSize="2xl">{movie.title}</Heading>
