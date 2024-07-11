@@ -8,7 +8,6 @@ Movie-Discvery is an app that allows you to explore and find movies you never kn
 
 - Movie-Discovery is a simple app designed to assist you find movies when you don't know what to watch
 - Movie-Discovery shows you the Movie together with an overview, date released and average rating
--
 
 # Features
 
