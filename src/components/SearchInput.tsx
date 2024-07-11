@@ -1,4 +1,4 @@
-import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import { Button, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
 
@@ -23,6 +23,16 @@ const SearchInput = ({ onSearch }: Props) => {
           placeholder="Search movies..."
           variant="filled"
         />
+        <Button
+          borderRadius={20}
+          marginX={2}
+          onClick={(event) => {
+            event.preventDefault();
+            if (ref.current) onSearch(ref.current.value);
+          }}
+        >
+          Search
+        </Button>
       </InputGroup>
     </form>
   );

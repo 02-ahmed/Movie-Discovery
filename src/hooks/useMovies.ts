@@ -13,12 +13,12 @@ export interface Movie {
 
 const useMovies = (movieQuery: MovieQuery) =>
   useData<Movie>(
-    "discover/movie",
+    movieQuery.searchText ? "search/movie" : "discover/movie",
     {
       params: {
         with_genres: movieQuery.genre?.id,
         sort_by: movieQuery.sortOrder,
-        search: movieQuery.searchText,
+        query: movieQuery.searchText,
       },
     },
     [movieQuery]
