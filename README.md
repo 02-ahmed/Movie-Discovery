@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# MOVIE-DISCOVERY
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Movie-Discvery is an app that allows you to explore and find movies you never knew of.
 
-Currently, two official plugins are available:
+- [Movie-Discovery](https://aduane-info.netlify.app/) This is a live link to Movie-Discovery
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Overview
 
-## Expanding the ESLint configuration
+- Movie-Discovery is a simple app designed to assist you find movies when you don't know what to watch
+- Movie-Discovery shows you the Movie together with an overview, date released and average rating
+-
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Features
 
-- Configure the top-level `parserOptions` property like this:
+- Sort by genres
+- Filter by Date released
+- Filter by Title
+- Filter by Revenue Made
+- Filter by popularity
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+# Screenshots
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+![web](/src/assets/Screenshot%202024-07-11%20230125.png)
+
+# Contact
+
+For any questions or suggestions, please contact me on [Twitter](https://twitter.com/_02ahmed)
